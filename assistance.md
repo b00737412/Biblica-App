@@ -12,7 +12,7 @@ Pour un problème technique, indiquez si possible votre modèle d'iPhone et la v
 
 ## Restaurer un achat
 
-Ouvrez l'offre Premium dans l'application, puis touchez « Restaurer ». Utilisez le même compte Apple que celui de l'achat.
+Dans l'application, ouvrez Profil, puis touchez « Restaurer mes achats ». Utilisez le même compte Apple que celui de l'achat.
 
 ## Gérer ou résilier votre abonnement
 
@@ -38,7 +38,7 @@ For a technical issue, please include your iPhone model and the app version if y
 
 ## Restore a purchase
 
-Open the Premium offer in the app, then tap "Restore". Use the same Apple Account you purchased with.
+In the app, open Profile, then tap "Restore purchases". Use the same Apple Account you purchased with.
 
 ## Manage or cancel your subscription
 
