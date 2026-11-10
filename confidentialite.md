@@ -6,7 +6,7 @@ title: Politique de confidentialité / Privacy policy
 
 # Politique de confidentialité de Biblica
 
-*Dernière mise à jour : 5 novembre 2026*
+*Dernière mise à jour : 10 novembre 2026*
 
 Biblica est une application de lecture de la Bible, de prière et de suivi du calendrier liturgique. Elle ne demande ni compte, ni e-mail, ni mot de passe.
 
@@ -16,19 +16,25 @@ Loïc Billou. Contact : b00737412@essec.edu
 
 ## Données conservées sur votre appareil
 
-Ces données restent sur votre téléphone et ne nous sont pas transmises :
+Vos réglages, vos favoris, vos listes, votre progression, votre historique, vos badges et les textes téléchargés pour la lecture hors ligne sont conservés sur votre téléphone. Les notifications sont programmées sur l'appareil, sans serveur de notification. Désinstaller l'application efface ces données de votre téléphone.
 
-- le prénom que vous saisissez, si vous en indiquez un ;
-- votre confession et votre calendrier choisis, votre langue et vos réglages ;
-- vos favoris, listes de versets, prières aimées, progression, historique et badges ;
-- les textes téléchargés pour la lecture hors ligne ;
-- vos préférences de notification. Les notifications sont programmées sur l'appareil, sans serveur de notification.
+Une partie de ces données nous est aussi envoyée : voir ci-dessous.
 
-Désinstaller l'application efface ces données.
+## Données envoyées à nos serveurs
+
+Dès l'installation, l'application enregistre sur nos serveurs, hébergés par Supabase, les données suivantes, liées à un identifiant technique aléatoire (sans lien avec votre e-mail) :
+
+- **votre profil** : votre prénom et votre âge, si vous les indiquez ; votre langue, votre confession, votre version de la Bible et votre calendrier ; vos réglages de notification et d'affichage ;
+- **vos réponses aux questions de l'accueil**, si vous y répondez ;
+- **votre activité** : les chapitres, prières et lectures du jour que vous validez, avec leur date ; vos versets et prières favoris ; vos listes de versets (nom, couleur et versets) ;
+- **votre utilisation de l'application** : les pages ouvertes et leur heure, l'affichage et le résultat de l'écran d'abonnement, l'ouverture des notifications ;
+- **votre appareil** : système (iPhone ou Android), version du système et de l'application, statut de votre abonnement.
+
+Ces données servent à faire fonctionner l'application et à comprendre son usage pour l'améliorer. Elles peuvent révéler vos convictions religieuses. Nous ne collectons ni votre e-mail, ni votre position, ni le texte de vos recherches.
 
 ## Données traitées par des prestataires
 
-**Supabase (fourniture des textes).** Pour charger les textes, l'application ouvre une session anonyme : un identifiant aléatoire, sans lien avec votre nom ni votre e-mail. Comme toute connexion à un serveur, elle implique le traitement de votre adresse IP et de données techniques. Les requêtes indiquent les textes demandés, par exemple la version de la Bible ou le calendrier, ce qui peut révéler la confession que vous avez choisie. Nous n'utilisons pas ces informations pour établir un profil. [Politique de Supabase](https://supabase.com/privacy)
+**Supabase (hébergement des textes et des données ci-dessus).** Comme toute connexion à un serveur, l'utilisation de l'application implique le traitement de votre adresse IP et de données techniques. [Politique de Supabase](https://supabase.com/privacy)
 
 **RevenueCat (gestion de l'abonnement).** RevenueCat, Inc. reçoit un identifiant anonyme propre à l'application, l'historique de vos achats, ainsi que votre région et votre devise. Ces données sont hébergées aux États-Unis. [Politique de RevenueCat](https://www.revenuecat.com/privacy/)
 
@@ -36,18 +42,19 @@ Désinstaller l'application efface ces données.
 
 ## Ce que Biblica ne fait pas
 
-Pas de publicité, pas de suivi publicitaire, pas d'outil d'analyse d'audience, pas de vente de données. L'application n'accède ni à votre position, ni à vos contacts, ni à vos photos, ni à votre appareil photo.
+Pas de publicité, pas de suivi publicitaire, pas de vente de données, aucun outil d'analyse tiers. L'application n'accède ni à votre position, ni à vos contacts, ni à vos photos, ni à votre appareil photo.
 
 ## Finalités et bases légales
 
 - Fournir les textes et le fonctionnement de l'application : exécution du service que vous demandez.
+- Comprendre l'usage de l'application pour l'améliorer : notre intérêt légitime.
 - Gérer l'abonnement : exécution du contrat.
 - Répondre à vos messages : notre intérêt légitime à vous assister.
 - Conserver les informations d'achat exigées par la loi : obligation légale.
 
 ## Durée de conservation
 
-L'identifiant anonyme et les données techniques sont conservés le temps nécessaire au fonctionnement du service. Les informations d'achat le sont pendant la durée de l'abonnement, puis selon les obligations légales. Les messages envoyés à l'assistance sont conservés le temps de traiter votre demande.
+Les données envoyées à nos serveurs sont conservées tant que vous utilisez l'application, puis au plus deux ans après votre dernière utilisation. Les informations d'achat le sont pendant la durée de l'abonnement, puis selon les obligations légales. Les messages envoyés à l'assistance sont conservés le temps de traiter votre demande.
 
 ## Transferts hors de l'Union européenne
 
@@ -59,7 +66,7 @@ Vous pouvez demander l'accès, la rectification, l'effacement ou la limitation d
 
 ## Enfants
 
-Biblica ne collecte pas sciemment de données permettant d'identifier un enfant. Pour toute question, écrivez à b00737412@essec.edu.
+Biblica ne s'adresse pas spécifiquement aux enfants. Si vous avez moins de 15 ans, demandez l'accord d'un parent avant d'utiliser l'application. Pour toute question, écrivez à b00737412@essec.edu.
 
 ## Modifications
 
@@ -69,7 +76,7 @@ Toute modification sera publiée sur cette page, avec sa date de mise à jour.
 
 # Privacy policy
 
-*Last updated: November 5, 2026*
+*Last updated: November 10, 2026*
 
 Biblica is an app for reading the Bible, praying and following the liturgical calendar. It requires no account, email address or password.
 
@@ -79,19 +86,25 @@ Loïc Billou. Contact: b00737412@essec.edu
 
 ## Data stored on your device
 
-This data stays on your phone and is not sent to us:
+Your settings, favorites, lists, progress, history, badges and the texts downloaded for offline reading are stored on your phone. Notifications are scheduled on the device, with no notification server. Uninstalling the app deletes this data from your phone.
 
-- the first name you enter, if any;
-- your chosen denomination and calendar, your language and your settings;
-- your favorites, verse lists, liked prayers, progress, history and badges;
-- texts downloaded for offline reading;
-- your notification preferences. Notifications are scheduled on the device, with no notification server.
+Part of this data is also sent to us: see below.
 
-Uninstalling the app deletes this data.
+## Data sent to our servers
+
+From installation, the app stores the following on our servers, hosted by Supabase, linked to a random technical identifier (not linked to your email address):
+
+- **your profile**: your first name and age, if you provide them; your language, denomination, Bible version and calendar; your notification and display settings;
+- **your answers to the welcome questions**, if you answer them;
+- **your activity**: the chapters, prayers and daily readings you complete, with their date; your favorite verses and prayers; your verse lists (name, color and verses);
+- **your use of the app**: the pages you open and when, the display and outcome of the subscription screen, when notifications are opened;
+- **your device**: system (iPhone or Android), system and app version, subscription status.
+
+This data is used to run the app and to understand how it is used in order to improve it. It may reveal your religious beliefs. We do not collect your email address, your location or the text of your searches.
 
 ## Data processed by service providers
 
-**Supabase (delivering the texts).** To load the texts, the app opens an anonymous session: a random identifier with no link to your name or email address. Like any connection to a server, this involves processing your IP address and technical data. Requests indicate which texts are requested, such as the Bible version or calendar, which may reveal the denomination you chose. We do not use this information to build a profile. [Supabase's policy](https://supabase.com/privacy)
+**Supabase (hosting the texts and the data above).** Like any connection to a server, using the app involves processing your IP address and technical data. [Supabase's policy](https://supabase.com/privacy)
 
 **RevenueCat (subscription management).** RevenueCat, Inc. receives an app-specific anonymous identifier, your purchase history, and your region and currency. This data is hosted in the United States. [RevenueCat's policy](https://www.revenuecat.com/privacy/)
 
@@ -99,18 +112,19 @@ Uninstalling the app deletes this data.
 
 ## What Biblica does not do
 
-No advertising, no ad tracking, no audience analytics, no sale of data. The app does not access your location, contacts, photos or camera.
+No advertising, no ad tracking, no sale of data, no third-party analytics tool. The app does not access your location, contacts, photos or camera.
 
 ## Purposes and legal bases
 
 - Delivering the texts and running the app: performance of the service you request.
+- Understanding how the app is used in order to improve it: our legitimate interest.
 - Managing your subscription: performance of the contract.
 - Answering your messages: our legitimate interest in assisting you.
 - Keeping purchase information required by law: legal obligation.
 
 ## Retention
 
-The anonymous identifier and technical data are kept for as long as needed to run the service. Purchase information is kept for the duration of the subscription, then as required by law. Messages sent to support are kept for as long as needed to handle your request.
+Data sent to our servers is kept while you use the app, then for at most two years after your last use. Purchase information is kept for the duration of the subscription, then as required by law. Messages sent to support are kept for as long as needed to handle your request.
 
 ## Transfers outside the European Union
 
@@ -122,7 +136,7 @@ You may request access to, correction, erasure or restriction of your data, and 
 
 ## Children
 
-Biblica does not knowingly collect data that identifies a child. For any question, write to b00737412@essec.edu.
+Biblica is not specifically directed at children. If you are under 15, ask a parent before using the app. For any question, write to b00737412@essec.edu.
 
 ## Changes
 
