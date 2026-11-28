@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="{{ page.lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biblica</title>
+<meta name="description" content="{{ page.tagline }}">
+<meta property="og:title" content="Biblica">
+<meta property="og:description" content="{{ page.tagline }}">
+<meta property="og:image" content="https://biblica-app.com/logo.png">
+<meta property="og:locale" content="{{ page.locale }}">
+<meta name="apple-itunes-app" content="app-id=6773479188">
+{%- assign homes = site.pages | where: "layout", "home" | sort: "lang" %}
+{%- for p in homes %}
+<link rel="alternate" hreflang="{{ p.lang }}" href="https://biblica-app.com{{ p.url }}">
+{%- endfor %}
+<link rel="icon" href="/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap">
+<script src="/go.js" data-page="accueil" data-lang="{{ page.lang }}"></script>
+<style>
+  :root {
+    --title: #01184C; --sub: #4A5470; --gold: #A9772B;
+    --bg-top: #FDF0DE; --bg-bottom: #F6E2C6; --card: #FFFFFF;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(180deg, var(--bg-top), var(--bg-bottom)); color: var(--title);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+    padding: 32px 16px;
+  }
+  main { width: 100%; max-width: 440px; text-align: center; }
+  .logo { width: 112px; height: 112px; border-radius: 25px; box-shadow: 0 14px 40px rgba(1, 24, 76, .22); }
+  h1 { font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif; font-weight: 600; font-size: 56px; line-height: 1; letter-spacing: .01em; margin: 20px 0 0; }
+  .rule { width: 56px; height: 4px; background: var(--gold); border-radius: 2px; margin: 16px auto; }
+  p.sub { color: var(--sub); font-size: 18px; line-height: 1.45; margin: 0 0 28px; }
+  .btn {
+    display: inline-block; text-decoration: none; background: var(--title); color: #FDF0DE;
+    font-weight: 600; font-size: 18px; padding: 15px 30px; border-radius: 999px;
+  }
+  .btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+  .soon { margin-top: 14px; color: var(--sub); font-size: 15px; }
+  .qr { margin-top: 30px; background: var(--card); border-radius: 22px; padding: 22px; display: inline-block; box-shadow: 0 8px 30px rgba(1, 24, 76, .08); }
+  .qr img { width: 176px; height: 176px; display: block; image-rendering: pixelated; }
+  .android { display: none; }
+  body.is-android .android { display: block; }
+  body.is-android .qr, body.is-mobile .qr, body.is-android #appstore, body.is-android #play-soon { display: none; }
+  html.going body { visibility: hidden; }
+  footer { margin-top: 30px; font-size: 13px; }
+  footer a { color: var(--sub); }
+  .langs { margin-top: 10px; }
+</style>
+</head>
+<body>
+<main>
+  <img class="logo" src="/logo.png" alt="{{ page.logo_alt }}">
+  <h1>Biblica</h1>
+  <div class="rule"></div>
+  <p class="sub">{{ page.tagline }}</p>
+
+  <a class="btn" id="appstore" href="https://apps.apple.com/app/id6773479188">{{ page.app_store }}</a>
+  <p class="soon" id="play-soon">{{ page.play_soon }}</p>
+  <p class="soon android">{{ page.android_soon }}</p>
+
+  <div class="qr">
+    <img src="/qr.png" alt="{{ page.qr_alt }}">
+  </div>
+
+  <footer>
+    <a href="{{ page.support_url }}">{{ page.support }}</a> ·
+    <a href="{{ page.privacy_url }}">{{ page.privacy }}</a> ·
+    <a href="{{ page.terms_url }}">{{ page.terms }}</a>
+    <div class="langs">
+    {%- for p in homes %}{% unless p.lang == page.lang %}
+      <a href="{{ p.url }}" hreflang="{{ p.lang }}" lang="{{ p.lang }}">{{ p.lang_name }}</a>
+    {%- endunless %}{% endfor %}
+    </div>
+  </footer>
+</main>
+<script>
+  var B = window.BIBLICA;
+  document.getElementById("appstore").href = B.appStoreUrl;
+  if (B.platform === "android") document.body.classList.add("is-android");
+  if (B.platform !== "desktop") document.body.classList.add("is-mobile");
+  if (B.playUrl) {
+    document.getElementById("play-soon").innerHTML = '<a class="btn" href="' + B.playUrl + '">' + {{ page.google_play | jsonify }} + '</a>';
+  }
+</script>
+</body>
+</html>

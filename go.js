@@ -1,10 +1,13 @@
 // Liens de biblica-app.com : chaque visiteur part tout de suite vers sa boutique
 // (iPhone, iPad -> App Store ; Android -> Google Play dès la sortie ; ordinateur ->
-// accueil), et la visite est comptée avec sa source, sans cookie ni adresse IP.
+// accueil dans sa langue, /fr/ ou /en/), et la visite est comptée avec sa source,
+// sans cookie ni adresse IP.
 //
 // Utilisation : <script src="/go.js" data-source="instagram"></script> sur un lien
-// court, <script src="/go.js" data-page="accueil"></script> sur l'accueil.
-// Source : data-source, sinon ?s=..., sinon "direct".
+// court (data-lang="fr" pour imposer la langue de l'accueil, comme /rejoins),
+// <script src="/go.js" data-page="accueil" data-lang="fr"></script> sur un accueil.
+// Source : data-source, sinon ?s=..., sinon "direct". Langue : data-lang, sinon
+// celle du navigateur si le site l'a, sinon l'anglais.
 (function () {
   "use strict";
 
@@ -21,6 +24,21 @@
 
   var script = document.currentScript;
   var page = (script && script.getAttribute("data-page")) || "lien";
+
+  // Langues du site : un dossier /<code>/ par langue (voir /fr/index.html).
+  var LANGS = ["fr", "en"];
+  var DEFAULT_LANG = "en";
+  function pickLang() {
+    var forced = script && script.getAttribute("data-lang");
+    if (forced && LANGS.indexOf(forced) >= 0) return forced;
+    var wanted = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ""];
+    for (var i = 0; i < wanted.length; i++) {
+      var code = String(wanted[i]).slice(0, 2).toLowerCase();
+      if (LANGS.indexOf(code) >= 0) return code;
+    }
+    return DEFAULT_LANG;
+  }
+  var siteLang = pickLang();
   var params = new URLSearchParams(location.search);
 
   function clean(value, max) {
@@ -161,6 +179,6 @@
     if (!internal) log();
     tidyUrl();
   } else {
-    go("/?s=" + source);
+    go("/" + siteLang + "/?s=" + source);
   }
 })();
