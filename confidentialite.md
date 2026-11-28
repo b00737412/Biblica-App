@@ -6,7 +6,7 @@ title: Politique de confidentialité / Privacy policy
 
 # Politique de confidentialité de Biblica
 
-*Dernière mise à jour : 10 novembre 2026*
+*Dernière mise à jour : 28 novembre 2026*
 
 Biblica est une application de lecture de la Bible, de prière et de suivi du calendrier liturgique. Elle ne demande ni compte, ni e-mail, ni mot de passe.
 
@@ -39,6 +39,10 @@ Ces données servent à faire fonctionner l'application et à comprendre son usa
 **RevenueCat (gestion de l'abonnement).** RevenueCat, Inc. reçoit un identifiant anonyme propre à l'application, l'historique de vos achats, ainsi que votre région et votre devise. Ces données sont hébergées aux États-Unis. [Politique de RevenueCat](https://www.revenuecat.com/privacy/)
 
 **Apple (paiement).** Les paiements sont traités par Apple. Nous n'avons jamais accès à vos coordonnées bancaires. [Politique d'Apple](https://www.apple.com/fr/legal/privacy/fr-ww/)
+
+## Liens de téléchargement (biblica-app.com)
+
+Quand vous ouvrez un lien de biblica-app.com (par exemple depuis Instagram, TikTok ou un message partagé par un proche), nous comptons la visite avant de vous envoyer vers l'App Store, Google Play ou notre page d'accueil. Nous enregistrons : le lien suivi, la date, le type d'appareil et la version de son système, l'application qui a ouvert le lien, le site d'origine, la langue et le fuseau horaire du navigateur (d'où nous déduisons le pays). Nous n'enregistrons ni votre adresse IP, ni aucun identifiant, et nous ne déposons aucun cookie : ces visites ne peuvent pas être reliées à vous ni à votre utilisation de l'application. Le lien vers l'App Store indique aussi à Apple la campagne d'origine, qui nous communique seulement des totaux.
 
 ## Ce que Biblica ne fait pas
 
@@ -76,7 +80,7 @@ Toute modification sera publiée sur cette page, avec sa date de mise à jour.
 
 # Privacy policy
 
-*Last updated: November 10, 2026*
+*Last updated: November 28, 2026*
 
 Biblica is an app for reading the Bible, praying and following the liturgical calendar. It requires no account, email address or password.
 
@@ -109,6 +113,10 @@ This data is used to run the app and to understand how it is used in order to im
 **RevenueCat (subscription management).** RevenueCat, Inc. receives an app-specific anonymous identifier, your purchase history, and your region and currency. This data is hosted in the United States. [RevenueCat's policy](https://www.revenuecat.com/privacy/)
 
 **Apple (payment).** Payments are processed by Apple. We never have access to your payment details. [Apple's policy](https://www.apple.com/legal/privacy/en-ww/)
+
+## Download links (biblica-app.com)
+
+When you open a biblica-app.com link (for example from Instagram, TikTok or a message shared by someone you know), we count the visit before sending you to the App Store, Google Play or our home page. We record: the link followed, the date, the device type and its system version, the app that opened the link, the referring site, and the browser's language and time zone (from which we infer the country). We do not record your IP address or any identifier, and we set no cookies: these visits cannot be linked to you or to your use of the app. The App Store link also tells Apple the originating campaign; Apple only reports totals to us.
 
 ## What Biblica does not do
 

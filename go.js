@@ -45,6 +45,62 @@
     /LinkedInApp/i.test(ua) ? "linkedin" :
     /Twitter/i.test(ua) ? "x" : null;
 
+  // Appareil et version du système, lus dans le navigateur. Approximatif : Safari
+  // sous iOS 26 annonce encore 18.6, Chrome sous Android annonce 10.
+  var isIPad = /iPad/.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  var device =
+    isIPad ? "ipad" :
+    /iPhone|iPod/.test(ua) ? "iphone" :
+    isAndroid ? (/Mobile/.test(ua) ? "android_phone" : "android_tablet") :
+    /Macintosh/.test(ua) ? "mac" :
+    /Windows/.test(ua) ? "windows" :
+    /Linux|CrOS/.test(ua) ? "linux" : "other";
+  var osVersion = null;
+  var m;
+  if (isIOS) {
+    // Safari donne sa version (= celle d'iOS) ; les applis (Instagram…) donnent « OS 18_1 ».
+    m = ua.match(/Version\/(\d+(?:\.\d+)?)/) || ua.match(/OS (\d+)[_.](\d+)/);
+    if (m) osVersion = m[2] ? m[1] + "." + m[2] : m[1];
+  } else if (isAndroid) {
+    m = ua.match(/Android (\d+(?:\.\d+)?)/);
+    if (m) osVersion = m[1];
+  }
+
+  // Pays déduit du fuseau horaire du téléphone : ni géolocalisation ni adresse IP.
+  var timezone = null;
+  try { timezone = Intl.DateTimeFormat().resolvedOptions().timeZone || null; } catch (e) {}
+  if (timezone && !/^[A-Za-z0-9_+\/-]{1,50}$/.test(timezone)) timezone = null;
+  var COUNTRIES = {
+    // France, outre-mer, francophonie européenne
+    "Europe/Paris": "FR", "Indian/Reunion": "RE", "Indian/Mayotte": "YT", "America/Martinique": "MQ",
+    "America/Guadeloupe": "GP", "America/Cayenne": "GF", "Pacific/Noumea": "NC", "Pacific/Tahiti": "PF",
+    "America/Miquelon": "PM", "Europe/Brussels": "BE", "Europe/Zurich": "CH", "Europe/Luxembourg": "LU",
+    "Europe/Monaco": "MC",
+    // Canada
+    "America/Montreal": "CA", "America/Toronto": "CA", "America/Vancouver": "CA", "America/Edmonton": "CA",
+    "America/Winnipeg": "CA", "America/Halifax": "CA", "America/Moncton": "CA", "America/St_Johns": "CA",
+    "America/Regina": "CA",
+    // Afrique francophone, Haïti, océan Indien
+    "Africa/Abidjan": "CI", "Africa/Dakar": "SN", "Africa/Douala": "CM", "Africa/Kinshasa": "CD",
+    "Africa/Lubumbashi": "CD", "Africa/Brazzaville": "CG", "Africa/Libreville": "GA", "Africa/Lome": "TG",
+    "Africa/Porto-Novo": "BJ", "Africa/Ouagadougou": "BF", "Africa/Bamako": "ML", "Africa/Niamey": "NE",
+    "Africa/Conakry": "GN", "Africa/Bangui": "CF", "Africa/Ndjamena": "TD", "Africa/Kigali": "RW",
+    "Africa/Bujumbura": "BI", "Africa/Djibouti": "DJ", "Africa/Nouakchott": "MR", "Africa/Algiers": "DZ",
+    "Africa/Tunis": "TN", "Africa/Casablanca": "MA", "Indian/Antananarivo": "MG", "Indian/Mauritius": "MU",
+    "Indian/Comoro": "KM", "Indian/Mahe": "SC", "America/Port-au-Prince": "HT", "Asia/Beirut": "LB",
+    // Ailleurs
+    "Europe/London": "GB", "Europe/Dublin": "IE", "Europe/Madrid": "ES", "Europe/Lisbon": "PT",
+    "Europe/Rome": "IT", "Europe/Berlin": "DE", "Europe/Amsterdam": "NL", "Europe/Vienna": "AT",
+    "Europe/Warsaw": "PL", "Europe/Vatican": "VA", "America/New_York": "US", "America/Chicago": "US",
+    "America/Denver": "US", "America/Phoenix": "US", "America/Los_Angeles": "US", "America/Anchorage": "US",
+    "Pacific/Honolulu": "US", "America/Mexico_City": "MX", "America/Sao_Paulo": "BR",
+    "America/Argentina/Buenos_Aires": "AR", "America/Bogota": "CO", "America/Lima": "PE",
+    "Africa/Lagos": "NG", "Africa/Nairobi": "KE", "Africa/Johannesburg": "ZA", "Asia/Manila": "PH",
+    "Asia/Kolkata": "IN", "Asia/Seoul": "KR", "Australia/Sydney": "AU", "Australia/Melbourne": "AU",
+    "Australia/Brisbane": "AU", "Australia/Perth": "AU", "Pacific/Auckland": "NZ"
+  };
+  var country = (timezone && COUNTRIES[timezone]) || null;
+
   var referrerHost = null;
   try { if (document.referrer) referrerHost = new URL(document.referrer).hostname.slice(0, 100); } catch (e) {}
   var internal = referrerHost === location.hostname;
@@ -69,6 +125,10 @@
         body: JSON.stringify({
           source: source,
           platform: platform,
+          device: device,
+          os_version: osVersion,
+          timezone: timezone,
+          country: country,
           in_app: inApp,
           referrer_host: referrerHost,
           lang: (navigator.language || "").slice(0, 12) || null,
