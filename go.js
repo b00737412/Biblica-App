@@ -11,7 +11,7 @@
   var APP_STORE_ID = "6773479188";
   // Identifiant fournisseur (pt) d'App Store Connect : sans lui, Apple ne compte
   // pas les campagnes (ct). App Store Connect > Analytics > Acquisition > Campaigns.
-  var APPLE_PT = "";
+  var APPLE_PT = "128954682";
   // Le jour de la sortie Android : "com.biblica.app".
   var GOOGLE_PLAY_ID = "";
   var SUPABASE_URL = "https://dqntclfyjuxnivnuslps.supabase.co";
