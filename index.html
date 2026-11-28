@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biblica</title>
+<meta name="description" content="Biblica : la Bible, l’Évangile du jour, la prière et l’année liturgique, dans une seule app.">
+<meta property="og:title" content="Biblica">
+<meta property="og:description" content="La Bible, l’Évangile du jour, la prière et l’année liturgique, dans une seule app.">
+<meta property="og:image" content="https://biblica-app.com/logo.png">
+<meta name="apple-itunes-app" content="app-id=6773479188">
+<link rel="icon" href="/logo.png">
+<script src="/go.js" data-page="accueil"></script>
+<style>
+  :root {
+    --title: #01184C; --sub: #4A5470; --gold: #A9772B;
+    --bg-top: #FDF0DE; --bg-bottom: #F6E2C6; --card: #FFFFFF;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(180deg, var(--bg-top), var(--bg-bottom)); color: var(--title);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+    padding: 32px 16px;
+  }
+  main { width: 100%; max-width: 440px; text-align: center; }
+  .logo { width: 112px; height: 112px; border-radius: 25px; box-shadow: 0 14px 40px rgba(1, 24, 76, .22); }
+  h1 { font-family: "New York", ui-serif, Georgia, "Times New Roman", serif; font-weight: 800; font-size: 44px; line-height: 1.05; margin: 22px 0 0; }
+  .rule { width: 56px; height: 4px; background: var(--gold); border-radius: 2px; margin: 16px auto; }
+  p.sub { color: var(--sub); font-size: 18px; line-height: 1.45; margin: 0 0 28px; }
+  .btn {
+    display: inline-block; text-decoration: none; background: var(--title); color: #FDF0DE;
+    font-weight: 600; font-size: 18px; padding: 15px 30px; border-radius: 999px;
+  }
+  .btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+  .soon { margin-top: 14px; color: var(--sub); font-size: 15px; }
+  .qr { margin-top: 30px; background: var(--card); border-radius: 22px; padding: 22px; display: inline-block; box-shadow: 0 8px 30px rgba(1, 24, 76, .08); }
+  .qr img { width: 176px; height: 176px; display: block; image-rendering: pixelated; }
+  .android { display: none; }
+  body.is-android .android { display: block; }
+  body.is-android .qr, body.is-mobile .qr, body.is-android #appstore, body.is-android #play-soon { display: none; }
+  html.going body { visibility: hidden; }
+  footer { margin-top: 30px; font-size: 13px; }
+  footer a { color: var(--sub); }
+</style>
+</head>
+<body>
+<main>
+  <img class="logo" src="/logo.png" alt="Logo Biblica">
+  <h1>Biblica</h1>
+  <div class="rule"></div>
+  <p class="sub" data-en="The Bible, the Gospel of the day, prayer and the liturgical year, in one app.">La Bible, l’Évangile du jour, la prière et l’année liturgique, dans une seule app.</p>
+
+  <a class="btn" id="appstore" href="https://apps.apple.com/app/id6773479188" data-en="Get it on the App Store">Télécharger sur l’App Store</a>
+  <p class="soon" id="play-soon" data-en="Coming soon on Google Play.">Bientôt sur Google Play.</p>
+  <p class="soon android" data-en="Biblica is not on Android yet. Come back soon!">Biblica n’est pas encore disponible sur Android. Revenez bientôt !</p>
+
+  <div class="qr">
+    <img src="/qr.png" alt="QR code pour télécharger Biblica">
+  </div>
+
+  <footer>
+    <a href="/assistance" data-en="Support">Assistance</a> ·
+    <a href="/confidentialite" data-en="Privacy">Confidentialité</a> ·
+    <a href="/conditions" data-en="Terms">Conditions</a>
+  </footer>
+</main>
+<script>
+  var B = window.BIBLICA;
+  var en = /^en/i.test(navigator.language || "");
+  document.getElementById("appstore").href = B.appStoreUrl;
+  if (B.platform === "android") document.body.classList.add("is-android");
+  if (B.platform !== "desktop") document.body.classList.add("is-mobile");
+  if (B.playUrl) {
+    var soon = document.getElementById("play-soon");
+    soon.innerHTML = '<a class="btn" href="' + B.playUrl + '">' + (en ? "Get it on Google Play" : "Télécharger sur Google Play") + "</a>";
+  }
+  if (en) {
+    document.documentElement.lang = "en";
+    document.querySelectorAll("[data-en]").forEach(function (el) { if (el.id !== "play-soon" || !B.playUrl) el.textContent = el.getAttribute("data-en"); });
+  }
+</script>
+</body>
+</html>
